@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RM. Mangsud</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <h1>RM. Mangsud(BETA)</h1>
+
+  <section>
+    <h2>GET Semua Data</h2>
+    <button onclick="getData('/makanan')">Makanan</button>
+    <button onclick="getData('/minuman')">Minuman</button>
+    <button onclick="getData('/users')">Users</button>
+  </section>
+
+  <section>
+    <h2>GET Data by ID</h2>
+    <form id="getByIdForm">
+      <select id="getType">
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+        <option value="users">Users</option>
+      </select>
+      <input type="text" id="getId" placeholder="ID" required>
+      <button type="submit">GET</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>POST Data</h2>
+    <form id="postForm">
+      <select id="postType">
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+        <option value="users">Users</option>
+      </select>
+      <input type="text" id="postNama" placeholder="Nama / Username" required>
+      <input type="text" id="postHarga" placeholder="Harga / Password" required>
+      <button type="submit">POST</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>EDIT Data</h2>
+    <form id="putForm">
+      <select id="putType">
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+        <option value="users">Users</option>
+      </select>
+      <input type="text" id="putId" placeholder="ID" required>
+      <input type="text" id="putNama" placeholder="Nama baru / Username baru">
+      <input type="text" id="putHarga" placeholder="Harga baru / Password baru">
+      <button type="submit">EDIT</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>DELETE Data</h2>
+    <form id="deleteForm">
+      <select id="deleteType">
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+        <option value="users">Users</option>
+      </select>
+      <input type="text" id="deleteId" placeholder="ID" required>
+      <button type="submit">DELETE</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Pesan Makanan / Minuman</h2>
+    <form id="pesanForm">
+      <input type="text" id="pesanUserId" placeholder="User ID" required>
+      <input type="text" id="pesanItem" placeholder="Nama Item" required>
+      <input type="number" id="pesanTotal" placeholder="Total" required>
+      <select id="pesanJenis" required>
+        <option value="makanan">Makanan</option>
+        <option value="minuman">Minuman</option>
+      </select>
+      <button type="submit">POST Pesanan</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>GET Pesanan User</h2>
+    <form id="getPesananForm">
+      <input type="text" id="getPesananUserId" placeholder="User ID" required>
+      <button type="submit">GET Pesanan</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>DELETE Pesanan</h2>
+    <form id="deletePesananForm">
+      <input type="text" id="deletePesananUserId" placeholder="User ID" required>
+      <input type="text" id="deletePesananId" placeholder="Tanpa ID = hapus semua, Dengan ID = hapus satu">
+      <button type="submit">DELETE Pesanan</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Output</h2>
+    <button onclick="copyJSON()">Copy Output</button>
+    <pre id="result" class="simple-output"></pre>
+  </section>
+
+  <script src="index.js"></script>
+</body>
+</html>
